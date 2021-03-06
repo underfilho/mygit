@@ -1,6 +1,6 @@
+import 'package:mygit/layouts/focus_list.dart';
 import 'package:mygit/pages/repository_page.dart';
 import 'package:mygit/utils/mycolors.dart';
-import 'package:mygit/layouts/skills.dart';
 import 'package:mygit/utils/const.dart';
 import 'package:flutter/material.dart';
 
@@ -25,15 +25,26 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   appBar(),
                   body(),
-                  Skills(
-                    selectedIndex: id,
-                    onTap: (int clicked) => setState(() => id = clicked),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    height: 100,
+                    child: FocusList(
+                      initialIndex: 0,
+                      duration: Duration(milliseconds: 300),
+                      onTap: (index) => setState(() => id = index),
+                      items: Const.images
+                          .map((url) => Image.asset(url, width: 60, height: 60))
+                          .toList(),
+                    ),
                   ),
                   Container(
                     alignment: Alignment.centerLeft,
                     margin: EdgeInsets.symmetric(horizontal: 40),
-                    child: Text(Const.skills_title[id],
-                        style: Theme.of(context).primaryTextTheme.headline1),
+                    child: AnimatedSwitcher(
+                      duration: Duration(milliseconds: 300),
+                      child: Text(Const.skills_title[id],
+                          style: Theme.of(context).primaryTextTheme.headline1),
+                    ),
                   ),
                   Container(
                     alignment: Alignment.centerLeft,

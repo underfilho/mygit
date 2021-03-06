@@ -52,11 +52,6 @@ flutter:
     - assets/skills/python.png
     - assets/skills/kotlin.png
     - assets/skills/vscode.png
-    - assets/skills/flutter-focus.png
-    - assets/skills/csharp-focus.png
-    - assets/skills/python-focus.png
-    - assets/skills/kotlin-focus.png
-    - assets/skills/vscode-focus.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

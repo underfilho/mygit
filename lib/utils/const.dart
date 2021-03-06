@@ -3,18 +3,10 @@ class Const {
 
   static final images = [
     'assets/skills/flutter.png',
-    'assets/skills/csharp.png',
     'assets/skills/python.png',
+    'assets/skills/csharp.png',
     'assets/skills/kotlin.png',
     'assets/skills/vscode.png',
-  ];
-
-  static final images_focus = [
-    'assets/skills/flutter-focus.png',
-    'assets/skills/csharp-focus.png',
-    'assets/skills/python-focus.png',
-    'assets/skills/kotlin-focus.png',
-    'assets/skills/vscode-focus.png',
   ];
 
   static final skills_text = [
@@ -26,8 +18,8 @@ class Const {
   ];
 
   static final icon = {
-    "Dart": 'assets/skills/flutter-focus.png',
-    "C#": 'assets/skills/csharp-focus.png',
-    "Python": 'assets/skills/python-focus.png'
+    "Dart": 'assets/skills/flutter.png',
+    "C#": 'assets/skills/csharp.png',
+    "Python": 'assets/skills/python.png'
   };
 }
