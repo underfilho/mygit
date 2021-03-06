@@ -3,8 +3,8 @@ class Const {
 
   static final images = [
     'assets/skills/flutter.png',
-    'assets/skills/python.png',
     'assets/skills/csharp.png',
+    'assets/skills/python.png',
     'assets/skills/kotlin.png',
     'assets/skills/vscode.png',
   ];

@@ -1,4 +1,4 @@
-import 'package:mygit/layouts/focus_list.dart';
+import 'package:mygit/layouts/carousel_list.dart';
 import 'package:mygit/pages/repository_page.dart';
 import 'package:mygit/utils/mycolors.dart';
 import 'package:mygit/utils/const.dart';
@@ -28,13 +28,15 @@ class _HomePageState extends State<HomePage> {
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                     height: 100,
-                    child: FocusList(
-                      initialIndex: 0,
-                      duration: Duration(milliseconds: 300),
+                    child: CarouselList(
                       onTap: (index) => setState(() => id = index),
-                      items: Const.images
-                          .map((url) => Image.asset(url, width: 60, height: 60))
-                          .toList(),
+                      items: Const.images.map((url) {
+                        return Container(
+                          margin: EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 10),
+                          child: Image.asset(url, width: 60, height: 60),
+                        );
+                      }).toList(),
                     ),
                   ),
                   Container(
