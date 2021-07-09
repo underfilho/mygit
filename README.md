@@ -1,3 +1,3 @@
 # mygit
 
-[Download](https://raw.githubusercontent.com/underfilho/mygit/master/app-release.apk)
+[Download](https://github.com/underfilho/mygit/blob/master/app-release.apk?raw=true)
