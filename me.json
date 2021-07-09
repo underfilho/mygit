@@ -20,6 +20,11 @@
       "title": "Kotlin",
       "description": "Kotlin tem uma sintaxe levemente diferente das linguagens mais utilizadas, mas rapidamente me adaptei também, utilizei no desenvolvimento nativo para Android com o Android Studio. Participei na criação de um aplicativo pessoal chamado ToBuy que atualmente transferi pra Flutter e continuo a trabalhar nele",
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/kotlin.png"
+    },
+    {
+      "title": "VSCode",
+      "description": "Atualmente o editor de texto que uso pra todas as linguagens anteriores (exceto Unity), tenho um bom conhecimento sobre o programa o que facilita e agiliza muito o desenvolvimento. Também utilizo o Visual Studio e Android Studio como IDE's.",
+      "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/vscode.png"
     }
   ]
 }
