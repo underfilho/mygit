@@ -3,23 +3,28 @@
   "skills": [
     {
       "title": "Flutter",
-      "description": "Atualmente o que mais me interesso e meu foco principal, utilizando Flutter consigo fazer várias coisas tanto para Android quanto para iOS.\nParticipação finalizada em um aplicativo voluntário sobre o COVID-19 em parceria com a UFS e atualmente participo na criação de outro app."
+      "description": "Atualmente o que mais me interesso e meu foco principal, utilizando Flutter consigo fazer várias coisas tanto para Android quanto para iOS.\nParticipação finalizada em um aplicativo voluntário sobre o COVID-19 em parceria com a UFS e atualmente participo na criação de outro app.",
+      "url_icon": "https://github.com/underfilho/mygit/tree/master/assets/skills/flutter.png"
     },
     {
       "title": "C#",
-      "description": "Trabalho como estagiário na Avonale utilizando C# como a linguagem principal através do ASP.NET, foi uma das minhas primeiras linguagens que aprendi, já trabalhei com ela também tanto com Xamarin como com Unity"
+      "description": "Trabalho como estagiário na Avonale utilizando C# como a linguagem principal através do ASP.NET, foi uma das minhas primeiras linguagens que aprendi, já trabalhei com ela também tanto com Xamarin como com Unity",
+      "url_icon": "https://github.com/underfilho/mygit/tree/master/assets/skills/csharp.png"
     },
     {
       "title": "Python",
-      "description": "Uma linguagem muito divertida e simples de se programar, ótima pra iniciantes e ótima para pequenos projetos, atualmente tenho uma biblioteca escrita em Python para desenhos e sistemas físicos disponível no meu Github, além de alguns pequenos projetos."
+      "description": "Uma linguagem muito divertida e simples de se programar, ótima pra iniciantes e ótima para pequenos projetos, atualmente tenho uma biblioteca escrita em Python para desenhos e sistemas físicos disponível no meu Github, além de alguns pequenos projetos.",
+      "url_icon": "https://github.com/underfilho/mygit/tree/master/assets/skills/python.png"
     },
     {
       "title": "Kotlin",
-      "description": "Kotlin tem uma sintaxe levemente diferente das linguagens mais utilizadas, mas rapidamente me adaptei também, utilizei no desenvolvimento nativo para Android com o Android Studio. Participei na criação de um aplicativo pessoal chamado ToBuy que atualmente transferi pra Flutter e continuo a trabalhar nele"
+      "description": "Kotlin tem uma sintaxe levemente diferente das linguagens mais utilizadas, mas rapidamente me adaptei também, utilizei no desenvolvimento nativo para Android com o Android Studio. Participei na criação de um aplicativo pessoal chamado ToBuy que atualmente transferi pra Flutter e continuo a trabalhar nele",
+      "url_icon": "https://github.com/underfilho/mygit/tree/master/assets/skills/kotlin.png"
     },
     {
       "title": "VSCode",
-      "description": "Atualmente o editor de texto que uso pra todas as linguagens anteriores (exceto Unity), tenho um bom conhecimento sobre o programa o que facilita e agiliza muito o desenvolvimento. Também utilizo o Visual Studio e Android Studio como IDE's."
+      "description": "Atualmente o editor de texto que uso pra todas as linguagens anteriores (exceto Unity), tenho um bom conhecimento sobre o programa o que facilita e agiliza muito o desenvolvimento. Também utilizo o Visual Studio e Android Studio como IDE's.",
+      "url_icon": "https://github.com/underfilho/mygit/tree/master/assets/skills/vscode.png"
     }
   ]
 }

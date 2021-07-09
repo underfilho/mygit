@@ -28,67 +28,60 @@ class _HomePageState extends State<HomePage> {
             child: Center(
               child: Container(
                 constraints: BoxConstraints(maxWidth: 800),
-                child: Column(
-                  children: <Widget>[
-                    appBar(),
-                    body(),
-                    Container(
-                      margin:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                      height: 100,
-                      child: CarouselList(
-                        onTap: (index) => setState(() => id = index),
-                        items: Const.images.map((url) {
-                          return Container(
-                            margin: EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 10),
-                            child: Image.asset(url, width: 60, height: 60),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                    FutureBuilder(
-                      future: profile,
-                      builder: (context, snapshot) {
-                        Profile profile = snapshot.data;
+                child: FutureBuilder(
+                  future: profile,
+                  builder: (context, snapshot) {
+                    Profile profile = snapshot.data;
 
-                        if (profile == null) {
-                          return Container(
-                            margin: EdgeInsets.only(bottom: 90),
-                            child: Center(
-                              child: CircularProgressIndicator(
-                                valueColor:
-                                    AlwaysStoppedAnimation(myTheme.textColor),
-                              ),
-                            ),
-                          );
-                        }
+                    if (profile == null) {
+                      return Container(
+                        margin: EdgeInsets.only(bottom: 90),
+                        child: Center(
+                          child: CircularProgressIndicator(
+                            valueColor:
+                                AlwaysStoppedAnimation(myTheme.textColor),
+                          ),
+                        ),
+                      );
+                    }
 
-                        return Column(
-                          children: [
-                            Container(
-                              alignment: Alignment.centerLeft,
-                              margin: EdgeInsets.symmetric(horizontal: 40),
-                              child: Text(profile.skills[id].title,
-                                  style: Theme.of(context)
-                                      .primaryTextTheme
-                                      .headline1),
-                            ),
-                            Container(
-                              alignment: Alignment.centerLeft,
-                              margin: EdgeInsets.symmetric(
-                                  horizontal: 40, vertical: 15),
-                              child: Text(profile.skills[id].description,
-                                  style: Theme.of(context)
-                                      .primaryTextTheme
-                                      .subtitle1),
-                            ),
-                            Container(height: 20)
-                          ],
-                        );
-                      },
-                    ),
-                  ],
+                    return Column(
+                      children: <Widget>[
+                        appBar(),
+                        body(profile.function),
+                        Container(
+                          margin: EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 10),
+                          height: 100,
+                          child: CarouselList(
+                            onTap: (index) => setState(() => id = index),
+                            items: Const.images.map((url) {
+                              return Container(
+                                margin: EdgeInsets.symmetric(
+                                    horizontal: 20, vertical: 10),
+                                child: Image.asset(url, width: 60, height: 60),
+                              );
+                            }).toList(),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.symmetric(horizontal: 40),
+                          child: Text(profile.skills[id].title,
+                              style:
+                                  Theme.of(context).primaryTextTheme.headline1),
+                        ),
+                        Container(
+                          alignment: Alignment.centerLeft,
+                          margin: EdgeInsets.symmetric(
+                              horizontal: 40, vertical: 15),
+                          child: Text(profile.skills[id].description,
+                              style:
+                                  Theme.of(context).primaryTextTheme.subtitle1),
+                        ),
+                        Container(height: 20)
+                      ],
+                    );
+                  },
                 ),
               ),
             ),
@@ -114,7 +107,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget body() {
+  Widget body(String function) {
     return Container(
       margin: EdgeInsets.only(left: 30, right: 30, top: 30),
       child: Column(
@@ -138,15 +131,16 @@ class _HomePageState extends State<HomePage> {
                 Text("Anderson Santos",
                     style: Theme.of(context).primaryTextTheme.headline1),
                 Padding(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.only(top: 20),
                 ),
-                Text("Desenvolvedor Mobile/Desktop",
+                Text(function,
+                    textAlign: TextAlign.center,
                     style: Theme.of(context).primaryTextTheme.subtitle1),
               ],
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 20),
+            margin: EdgeInsets.only(top: 30),
             color: myTheme.divider,
             height: 0.5,
           )
