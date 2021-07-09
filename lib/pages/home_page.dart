@@ -1,8 +1,8 @@
 import 'package:mygit/layouts/carousel_list.dart';
 import 'package:mygit/pages/repository_page.dart';
+import 'package:mygit/models/profile.dart';
 import 'package:mygit/utils/getapi.dart';
 import 'package:mygit/utils/mycolors.dart';
-import 'package:mygit/models/skill.dart';
 import 'package:mygit/utils/const.dart';
 import 'package:flutter/material.dart';
 
@@ -13,12 +13,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   GetApi getApi = GetApi();
-  List<Skill> skills;
   int id = 0;
 
   @override
   Widget build(BuildContext context) {
-    final skills = getApi.getSkills();
+    final profile = getApi.getProfile();
 
     return Scaffold(
       body: Container(
@@ -46,11 +45,11 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   FutureBuilder(
-                    future: skills,
+                    future: profile,
                     builder: (context, snapshot) {
-                      List<Skill> skills = snapshot.data;
+                      Profile profile = snapshot.data;
 
-                      if (skills == null) {
+                      if (profile == null) {
                         return Container(
                           margin: EdgeInsets.only(bottom: 90),
                           child: Center(
@@ -69,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                             margin: EdgeInsets.symmetric(horizontal: 40),
                             child: AnimatedSwitcher(
                               duration: Duration(milliseconds: 300),
-                              child: Text(skills[id].title,
+                              child: Text(profile.skills[id].title,
                                   style: Theme.of(context)
                                       .primaryTextTheme
                                       .headline1),
@@ -79,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                             alignment: Alignment.centerLeft,
                             margin: EdgeInsets.symmetric(
                                 horizontal: 40, vertical: 15),
-                            child: Text(skills[id].description,
+                            child: Text(profile.skills[id].description,
                                 style: Theme.of(context)
                                     .primaryTextTheme
                                     .subtitle1),
