@@ -24,11 +24,11 @@ class GetApi {
   Future<Profile> getProfile() async {
     final url =
         "https://raw.githubusercontent.com/underfilho/mygit/master/me.json";
-    final responde = await http.get(url);
+    final response = await http.get(url);
     Profile profile;
 
-    if (responde.statusCode == 200) {
-      var jsonData = json.decode(responde.body);
+    if (response.statusCode == 200) {
+      var jsonData = json.decode(response.body);
 
       profile = Profile.fromMap(jsonData);
     } else

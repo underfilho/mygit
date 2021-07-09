@@ -25,70 +25,71 @@ class _HomePageState extends State<HomePage> {
         height: double.infinity,
         child: SafeArea(
           child: SingleChildScrollView(
-            child: Container(
-              child: Column(
-                children: <Widget>[
-                  appBar(),
-                  body(),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    height: 100,
-                    child: CarouselList(
-                      onTap: (index) => setState(() => id = index),
-                      items: Const.images.map((url) {
-                        return Container(
-                          margin: EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 10),
-                          child: Image.asset(url, width: 60, height: 60),
-                        );
-                      }).toList(),
+            child: Center(
+              child: Container(
+                constraints: BoxConstraints(maxWidth: 800),
+                child: Column(
+                  children: <Widget>[
+                    appBar(),
+                    body(),
+                    Container(
+                      margin:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      height: 100,
+                      child: CarouselList(
+                        onTap: (index) => setState(() => id = index),
+                        items: Const.images.map((url) {
+                          return Container(
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 10),
+                            child: Image.asset(url, width: 60, height: 60),
+                          );
+                        }).toList(),
+                      ),
                     ),
-                  ),
-                  FutureBuilder(
-                    future: profile,
-                    builder: (context, snapshot) {
-                      Profile profile = snapshot.data;
+                    FutureBuilder(
+                      future: profile,
+                      builder: (context, snapshot) {
+                        Profile profile = snapshot.data;
 
-                      if (profile == null) {
-                        return Container(
-                          margin: EdgeInsets.only(bottom: 90),
-                          child: Center(
-                            child: CircularProgressIndicator(
-                              valueColor:
-                                  AlwaysStoppedAnimation(myTheme.textColor),
+                        if (profile == null) {
+                          return Container(
+                            margin: EdgeInsets.only(bottom: 90),
+                            child: Center(
+                              child: CircularProgressIndicator(
+                                valueColor:
+                                    AlwaysStoppedAnimation(myTheme.textColor),
+                              ),
                             ),
-                          ),
-                        );
-                      }
+                          );
+                        }
 
-                      return Column(
-                        children: [
-                          Container(
-                            alignment: Alignment.centerLeft,
-                            margin: EdgeInsets.symmetric(horizontal: 40),
-                            child: AnimatedSwitcher(
-                              duration: Duration(milliseconds: 300),
+                        return Column(
+                          children: [
+                            Container(
+                              alignment: Alignment.centerLeft,
+                              margin: EdgeInsets.symmetric(horizontal: 40),
                               child: Text(profile.skills[id].title,
                                   style: Theme.of(context)
                                       .primaryTextTheme
                                       .headline1),
                             ),
-                          ),
-                          Container(
-                            alignment: Alignment.centerLeft,
-                            margin: EdgeInsets.symmetric(
-                                horizontal: 40, vertical: 15),
-                            child: Text(profile.skills[id].description,
-                                style: Theme.of(context)
-                                    .primaryTextTheme
-                                    .subtitle1),
-                          ),
-                          Container(height: 20)
-                        ],
-                      );
-                    },
-                  ),
-                ],
+                            Container(
+                              alignment: Alignment.centerLeft,
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: 40, vertical: 15),
+                              child: Text(profile.skills[id].description,
+                                  style: Theme.of(context)
+                                      .primaryTextTheme
+                                      .subtitle1),
+                            ),
+                            Container(height: 20)
+                          ],
+                        );
+                      },
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
