@@ -10,6 +10,6 @@ class Skill {
   Skill.fromMap(Map<String, dynamic> json) {
     title = json['title'];
     description = json['description'];
-    urlIcon = json['urlIcon'];
+    urlIcon = json['url_icon'];
   }
 }

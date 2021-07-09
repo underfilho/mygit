@@ -1,5 +1,6 @@
 import 'package:mygit/layouts/carousel_list.dart';
 import 'package:mygit/pages/repository_page.dart';
+import 'package:mygit/models/skill.dart';
 import 'package:mygit/models/profile.dart';
 import 'package:mygit/utils/getapi.dart';
 import 'package:mygit/utils/mycolors.dart';
@@ -55,13 +56,7 @@ class _HomePageState extends State<HomePage> {
                           height: 100,
                           child: CarouselList(
                             onTap: (index) => setState(() => id = index),
-                            items: Const.images.map((url) {
-                              return Container(
-                                margin: EdgeInsets.symmetric(
-                                    horizontal: 20, vertical: 10),
-                                child: Image.asset(url, width: 60, height: 60),
-                              );
-                            }).toList(),
+                            items: skillsIcon(profile.skills),
                           ),
                         ),
                         Container(
@@ -89,6 +84,20 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+
+  List<Widget> skillsIcon(List<Skill> skills) {
+    List<Widget> icons = [];
+
+    for (var skill in skills) {
+      Widget icon = Container(
+        margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        child: Image.network(skill.urlIcon, width: 60, height: 60),
+      );
+      icons.add(icon);
+    }
+
+    return icons;
   }
 
   Widget appBar() {
