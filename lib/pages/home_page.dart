@@ -1,6 +1,8 @@
 import 'package:mygit/layouts/carousel_list.dart';
 import 'package:mygit/pages/repository_page.dart';
+import 'package:mygit/utils/getapi.dart';
 import 'package:mygit/utils/mycolors.dart';
+import 'package:mygit/models/skill.dart';
 import 'package:mygit/utils/const.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +12,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  GetApi getApi = GetApi();
+  List<Skill> skills;
   int id = 0;
+
+  @override
+  void initState() async {
+    skills = await getApi.getSkills();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,14 +54,14 @@ class _HomePageState extends State<HomePage> {
                     margin: EdgeInsets.symmetric(horizontal: 40),
                     child: AnimatedSwitcher(
                       duration: Duration(milliseconds: 300),
-                      child: Text(Const.skills_title[id],
+                      child: Text(skills[id].title,
                           style: Theme.of(context).primaryTextTheme.headline1),
                     ),
                   ),
                   Container(
                     alignment: Alignment.centerLeft,
                     margin: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                    child: Text(Const.skills_text[id],
+                    child: Text(skills[id].description,
                         style: Theme.of(context).primaryTextTheme.subtitle1),
                   ),
                   Container(height: 20)

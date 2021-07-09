@@ -1,6 +1,7 @@
 import 'package:mygit/models/repository.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:mygit/models/skill.dart';
 
 class GetApi {
   Future<List<Repository>> getRepositories() async {
@@ -18,5 +19,21 @@ class GetApi {
       return null;
 
     return repositories;
+  }
+
+  Future<List<Skill>> getSkills() async {
+    final url =
+        "https://raw.githubusercontent.com/underfilho/mygit/master/me.json";
+    final responde = await http.get(url);
+    List<Skill> skills = [];
+
+    if (responde.statusCode == 200) {
+      var jsonData = json.decode(responde.body);
+
+      for (var item in jsonData) skills.add(Skill.fromMap(item));
+    } else
+      return null;
+
+    return skills;
   }
 }
