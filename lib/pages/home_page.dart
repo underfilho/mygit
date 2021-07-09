@@ -17,13 +17,9 @@ class _HomePageState extends State<HomePage> {
   int id = 0;
 
   @override
-  void initState() async {
-    skills = await getApi.getSkills();
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final skills = getApi.getSkills();
+
     return Scaffold(
       body: Container(
         color: myTheme.background,
@@ -49,22 +45,50 @@ class _HomePageState extends State<HomePage> {
                       }).toList(),
                     ),
                   ),
-                  Container(
-                    alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.symmetric(horizontal: 40),
-                    child: AnimatedSwitcher(
-                      duration: Duration(milliseconds: 300),
-                      child: Text(skills[id].title,
-                          style: Theme.of(context).primaryTextTheme.headline1),
-                    ),
+                  FutureBuilder(
+                    future: skills,
+                    builder: (context, snapshot) {
+                      List<Skill> skills = snapshot.data;
+
+                      if (skills == null) {
+                        return Container(
+                          margin: EdgeInsets.only(bottom: 90),
+                          child: Center(
+                            child: CircularProgressIndicator(
+                              valueColor:
+                                  AlwaysStoppedAnimation(myTheme.textColor),
+                            ),
+                          ),
+                        );
+                      }
+
+                      return Column(
+                        children: [
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            margin: EdgeInsets.symmetric(horizontal: 40),
+                            child: AnimatedSwitcher(
+                              duration: Duration(milliseconds: 300),
+                              child: Text(skills[id].title,
+                                  style: Theme.of(context)
+                                      .primaryTextTheme
+                                      .headline1),
+                            ),
+                          ),
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 40, vertical: 15),
+                            child: Text(skills[id].description,
+                                style: Theme.of(context)
+                                    .primaryTextTheme
+                                    .subtitle1),
+                          ),
+                          Container(height: 20)
+                        ],
+                      );
+                    },
                   ),
-                  Container(
-                    alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                    child: Text(skills[id].description,
-                        style: Theme.of(context).primaryTextTheme.subtitle1),
-                  ),
-                  Container(height: 20)
                 ],
               ),
             ),
