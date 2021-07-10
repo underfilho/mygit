@@ -4,7 +4,6 @@ import 'package:mygit/models/skill.dart';
 import 'package:mygit/models/profile.dart';
 import 'package:mygit/utils/getapi.dart';
 import 'package:mygit/utils/mycolors.dart';
-import 'package:mygit/utils/const.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
