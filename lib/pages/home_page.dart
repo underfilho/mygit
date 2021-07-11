@@ -1,10 +1,12 @@
 import 'package:mygit/layouts/carousel_list.dart';
 import 'package:mygit/pages/repository_page.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:mygit/models/skill.dart';
 import 'package:mygit/models/profile.dart';
 import 'package:mygit/utils/getapi.dart';
 import 'package:mygit/utils/mycolors.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -24,58 +26,70 @@ class _HomePageState extends State<HomePage> {
         color: myTheme.background,
         height: double.infinity,
         child: SafeArea(
-          child: SingleChildScrollView(
-            child: Center(
-              child: Container(
-                constraints: BoxConstraints(maxWidth: 800),
-                child: FutureBuilder(
-                  future: profile,
-                  builder: (context, snapshot) {
-                    Profile profile = snapshot.data;
+          child: LayoutBuilder(
+            builder: (context, constraints) => SingleChildScrollView(
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: constraints.copyWith(
+                    maxWidth: 800,
+                    minHeight: constraints.maxHeight,
+                    maxHeight: double.infinity,
+                  ),
+                  child: FutureBuilder(
+                    future: profile,
+                    builder: (context, snapshot) {
+                      Profile profile = snapshot.data;
 
-                    if (profile == null) {
-                      return Container(
-                        margin: EdgeInsets.only(bottom: 90),
-                        child: Center(
-                          child: CircularProgressIndicator(
-                            valueColor:
-                                AlwaysStoppedAnimation(myTheme.textColor),
+                      if (profile == null) {
+                        return Container(
+                          margin: EdgeInsets.only(bottom: 90),
+                          child: Center(
+                            child: CircularProgressIndicator(
+                              valueColor:
+                                  AlwaysStoppedAnimation(myTheme.textColor),
+                            ),
                           ),
+                        );
+                      }
+
+                      return IntrinsicHeight(
+                        child: Column(
+                          children: <Widget>[
+                            appBar(),
+                            body(profile.function),
+                            Container(
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 10),
+                              height: 100,
+                              child: CarouselList(
+                                onTap: (index) => setState(() => id = index),
+                                items: skillsIcon(profile.skills),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.symmetric(horizontal: 40),
+                              child: Text(profile.skills[id].title,
+                                  style: Theme.of(context)
+                                      .primaryTextTheme
+                                      .headline1),
+                            ),
+                            Container(
+                              alignment: Alignment.centerLeft,
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: 40, vertical: 15),
+                              child: Text(profile.skills[id].description,
+                                  style: Theme.of(context)
+                                      .primaryTextTheme
+                                      .subtitle1),
+                            ),
+                            Container(height: 25),
+                            Expanded(child: footer()),
+                            Container(height: 35),
+                          ],
                         ),
                       );
-                    }
-
-                    return Column(
-                      children: <Widget>[
-                        appBar(),
-                        body(profile.function),
-                        Container(
-                          margin: EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 10),
-                          height: 100,
-                          child: CarouselList(
-                            onTap: (index) => setState(() => id = index),
-                            items: skillsIcon(profile.skills),
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(horizontal: 40),
-                          child: Text(profile.skills[id].title,
-                              style:
-                                  Theme.of(context).primaryTextTheme.headline1),
-                        ),
-                        Container(
-                          alignment: Alignment.centerLeft,
-                          margin: EdgeInsets.symmetric(
-                              horizontal: 40, vertical: 15),
-                          child: Text(profile.skills[id].description,
-                              style:
-                                  Theme.of(context).primaryTextTheme.subtitle1),
-                        ),
-                        Container(height: 20)
-                      ],
-                    );
-                  },
+                    },
+                  ),
                 ),
               ),
             ),
@@ -155,5 +169,32 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+
+  Widget footer() {
+    return Container(
+      alignment: Alignment.bottomCenter,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          InkWell(
+            onTap: () => launchURL('https://github.com/underfilho'),
+            child: Icon(FontAwesome.github, color: Colors.white, size: 24),
+          ),
+          SizedBox(width: 10),
+          InkWell(
+            onTap: () => launchURL('https://linkedin.com/in/underfilho'),
+            child: Icon(FontAwesome.linkedin, color: Colors.white, size: 24),
+          ),
+        ],
+      ),
+    );
+  }
+
+  launchURL(String url) async {
+    if (await canLaunch(url))
+      await launch(url);
+    else
+      throw 'Could not launch $url';
   }
 }
