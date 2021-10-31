@@ -12,11 +12,16 @@ class RepositoryPage extends StatefulWidget {
 
 class _RepositoryPageState extends State<RepositoryPage> {
   GetApi getapi = GetApi();
+  late final repositories;
+
+  @override
+  void initState() {
+    super.initState();
+    repositories = getapi.getRepositories();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final repositories = getapi.getRepositories();
-
     return Scaffold(
       backgroundColor: myTheme.background,
       body: SafeArea(
@@ -26,9 +31,7 @@ class _RepositoryPageState extends State<RepositoryPage> {
             FutureBuilder(
               future: repositories,
               builder: (context, snapshot) {
-                List<Repository> items = snapshot.data;
-
-                if (items == null) {
+                if (snapshot.data == null) {
                   return Expanded(
                     child: Container(
                       margin: EdgeInsets.only(bottom: 90),
@@ -40,6 +43,7 @@ class _RepositoryPageState extends State<RepositoryPage> {
                     ),
                   );
                 }
+                List<Repository> items = snapshot.data as List<Repository>;
 
                 return Expanded(
                   child: ListView.builder(

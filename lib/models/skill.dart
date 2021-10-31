@@ -1,15 +1,12 @@
-import 'package:mygit/models/repository.dart';
-
 class Skill {
   String title;
   String description;
   String urlIcon;
 
-  Skill({this.title, this.description});
+  Skill({required this.title, required this.description, required this.urlIcon});
 
-  Skill.fromMap(Map<String, dynamic> json) {
-    title = json['title'];
-    description = json['description'];
+  Skill.fromMap(Map<String, dynamic> json) :
+    title = json['title'],
+    description = json['description'],
     urlIcon = json['url_icon'];
-  }
 }

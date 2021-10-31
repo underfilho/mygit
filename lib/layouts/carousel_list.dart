@@ -5,7 +5,7 @@ class CarouselList extends StatefulWidget {
   final List<Widget> items;
   final Function(int) onTap;
 
-  CarouselList({@required this.items, @required this.onTap});
+  CarouselList({required this.items, required this.onTap});
 
   @override
   _CarouselListState createState() => _CarouselListState();

@@ -1,6 +1,6 @@
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mygit/layouts/carousel_list.dart';
 import 'package:mygit/pages/repository_page.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:mygit/models/skill.dart';
 import 'package:mygit/models/profile.dart';
 import 'package:mygit/utils/getapi.dart';
@@ -16,11 +16,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   GetApi getApi = GetApi();
   int id = 0;
+  late final profileFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    profileFuture = getApi.getProfile();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final profile = getApi.getProfile();
-
     return Scaffold(
       body: Container(
         color: myTheme.background,
@@ -29,73 +34,76 @@ class _HomePageState extends State<HomePage> {
           child: LayoutBuilder(
             builder: (context, constraints) => SingleChildScrollView(
               child: Center(
-                child: ConstrainedBox(
-                  constraints: constraints.copyWith(
-                    maxWidth: 800,
-                    minHeight: constraints.maxHeight,
-                    maxHeight: double.infinity,
-                  ),
-                  child: FutureBuilder(
-                    future: profile,
-                    builder: (context, snapshot) {
-                      Profile profile = snapshot.data;
-
-                      if (profile == null) {
-                        return Container(
-                          margin: EdgeInsets.only(bottom: 90),
-                          child: Center(
-                            child: CircularProgressIndicator(
-                              valueColor:
-                                  AlwaysStoppedAnimation(myTheme.textColor),
-                            ),
+                child: FutureBuilder(
+                  future: profileFuture,
+                  builder: (context, snapshot) {
+                    if (snapshot.data == null) {
+                      return Container(
+                        margin: EdgeInsets.only(bottom: 90),
+                        child: Center(
+                          child: CircularProgressIndicator(
+                            valueColor:
+                                AlwaysStoppedAnimation(myTheme.textColor),
                           ),
-                        );
-                      }
-
-                      return IntrinsicHeight(
-                        child: Column(
-                          children: <Widget>[
-                            appBar(),
-                            body(profile.function),
-                            Container(
-                              margin: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 10),
-                              height: 100,
-                              child: CarouselList(
-                                onTap: (index) => setState(() => id = index),
-                                items: skillsIcon(profile.skills),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.symmetric(horizontal: 40),
-                              child: Text(profile.skills[id].title,
-                                  style: Theme.of(context)
-                                      .primaryTextTheme
-                                      .headline1),
-                            ),
-                            Container(
-                              alignment: Alignment.centerLeft,
-                              margin: EdgeInsets.symmetric(
-                                  horizontal: 40, vertical: 15),
-                              child: Text(profile.skills[id].description,
-                                  style: Theme.of(context)
-                                      .primaryTextTheme
-                                      .subtitle1),
-                            ),
-                            Container(height: 25),
-                            Expanded(child: footer()),
-                            Container(height: 35),
-                          ],
                         ),
                       );
-                    },
-                  ),
+                    }
+                    Profile profileInfo = snapshot.data as Profile;
+
+                    return isPortrait(constraints) ?
+                      buildPortraitLayout(profileInfo) :
+                      buildLandscapeLayout(profileInfo);
+                  },
                 ),
               ),
             ),
           ),
         ),
       ),
+    );
+  }
+
+  Widget buildLandscapeLayout(Profile profileInfo) {
+    return Column(
+      mainAxisSize: MainAxisSize.max,
+      children: <Widget>[
+        appBarLandscape(),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              flex: 2,
+              child: profile(profileInfo.function),
+            ),
+            Expanded(
+              flex: 5,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 50),
+                child: body(profileInfo),
+              ),
+            ),
+          ],
+        ),
+        Container(height: 15),
+        divider(),
+        //Expanded(child: footer()),
+        Container(height: 35),
+      ],
+    );
+  }
+
+  Widget buildPortraitLayout(Profile profileInfo) {
+    return Column(
+      mainAxisSize: MainAxisSize.max,
+      children: <Widget>[
+        appBar(),
+        profile(profileInfo.function),
+        divider(),
+        body(profileInfo),
+        Container(height: 25),
+        //Expanded(child: footer()),
+        Container(height: 35),
+      ],
     );
   }
 
@@ -111,6 +119,20 @@ class _HomePageState extends State<HomePage> {
     }
 
     return icons;
+  }
+
+  Widget appBarLandscape() {
+    return Container(
+      alignment: Alignment.bottomRight,
+      margin: EdgeInsets.only(right: 15, top: 20),
+      child: InkWell(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => RepositoryPage()));
+        },
+        child: Text("Meus Repositórios", style: Theme.of(context).primaryTextTheme.caption),
+      ),
+    );
   }
 
   Widget appBar() {
@@ -129,7 +151,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget body(String function) {
+  Widget profile(String function) {
     return Container(
       margin: EdgeInsets.only(left: 30, right: 30, top: 30),
       child: Column(
@@ -151,6 +173,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Text("Anderson Santos",
+                    textAlign: TextAlign.center,
                     style: Theme.of(context).primaryTextTheme.headline1),
                 Padding(
                   padding: EdgeInsets.only(top: 20),
@@ -161,14 +184,56 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(top: 30),
-            color: myTheme.divider,
-            height: 0.5,
-          )
         ],
       ),
     );
+  }
+
+  Widget body(Profile profileInfo) {
+    return Container(
+      child: Column(
+        children: [
+          Container(
+            margin: EdgeInsets.symmetric(
+                horizontal: 20, vertical: 10),
+            height: 100,
+            child: CarouselList(
+              onTap: (index) => setState(() => id = index),
+              items: skillsIcon(profileInfo.skills),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 40),
+            child: Text(profileInfo.skills[id].title,
+                style: Theme.of(context)
+                    .primaryTextTheme
+                    .headline1),
+          ),
+          Container(
+            alignment: Alignment.centerLeft,
+            margin: EdgeInsets.symmetric(
+                horizontal: 40, vertical: 15),
+            child: Text(profileInfo.skills[id].description,
+                style: Theme.of(context)
+                    .primaryTextTheme
+                    .subtitle1),
+          ),
+        ],
+      ),
+    );
+  }
+  
+  Widget divider() {
+    return Container(
+      margin: EdgeInsets.only(top: 30, right: 30, left: 30),
+      color: myTheme.divider,
+      height: 0.5,
+    );
+    /*Container(
+      margin: EdgeInsets.only(right: 30, top: 15, bottom: 15),
+      color: myTheme.divider,
+      width: 0.5,
+    )*/
   }
 
   Widget footer() {
@@ -179,17 +244,19 @@ class _HomePageState extends State<HomePage> {
         children: [
           InkWell(
             onTap: () => launchURL('https://github.com/underfilho'),
-            child: Icon(FontAwesome.github, color: Colors.white, size: 24),
+            child: FaIcon(FontAwesomeIcons.github, color: Colors.white, size: 24),
           ),
           SizedBox(width: 10),
           InkWell(
             onTap: () => launchURL('https://linkedin.com/in/underfilho'),
-            child: Icon(FontAwesome.linkedin, color: Colors.white, size: 24),
+            child: FaIcon(FontAwesomeIcons.linkedin, color: Colors.white, size: 24),
           ),
         ],
       ),
     );
   }
+
+  bool isPortrait(BoxConstraints constraints) => constraints.maxWidth / constraints.maxHeight < 6 / 4;
 
   launchURL(String url) async {
     if (await canLaunch(url))

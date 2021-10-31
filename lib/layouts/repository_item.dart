@@ -10,7 +10,7 @@ class RepositoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String url_icon = Const.icon[repository.language];
+    String? url_icon = Const.icon[repository.language];
 
     return Container(
       width: double.infinity,
@@ -29,11 +29,11 @@ class RepositoryItem extends StatelessWidget {
               Text(repository.title,
                   style: Theme.of(context)
                       .primaryTextTheme
-                      .headline2
+                      .headline2!
                       .copyWith(fontSize: 22)),
               Spacer(),
               (url_icon != null)
-                  ? Image.asset(Const.icon[repository.language],
+                  ? Image.asset(url_icon,
                       width: 25, height: 25)
                   : Container()
             ]),
@@ -44,7 +44,7 @@ class RepositoryItem extends StatelessWidget {
                 repository.description,
                 style: Theme.of(context)
                     .primaryTextTheme
-                    .caption
+                    .caption!
                     .copyWith(fontSize: 14),
               ),
             ),
