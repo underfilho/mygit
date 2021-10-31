@@ -11,7 +11,7 @@ class RepositoryPage extends StatefulWidget {
 }
 
 class _RepositoryPageState extends State<RepositoryPage> {
-  GetApi getapi = GetApi();
+  final GetApi getapi = GetApi();
   late final repositories;
 
   @override

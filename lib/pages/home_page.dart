@@ -3,6 +3,7 @@ import 'package:mygit/layouts/carousel_list.dart';
 import 'package:mygit/pages/repository_page.dart';
 import 'package:mygit/models/skill.dart';
 import 'package:mygit/models/profile.dart';
+import 'package:mygit/utils/const.dart';
 import 'package:mygit/utils/getapi.dart';
 import 'package:mygit/utils/mycolors.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  GetApi getApi = GetApi();
+  final GetApi getApi = GetApi();
   int id = 0;
   late final profileFuture;
 
@@ -74,9 +75,9 @@ class _HomePageState extends State<HomePage> {
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           appBar(),
-          profile(profileInfo.function),
+          profile(Const.urlImg, profileInfo.function),
           divider(),
-          body(profileInfo),
+          body(profileInfo.skills),
           Container(height: 25),
           Expanded(child: footer()),
           Container(height: 35),
@@ -115,7 +116,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget profile(String function) {
+  Widget profile(String urlImg, String function) {
     return Container(
       margin: EdgeInsets.only(left: 30, right: 30, top: 30),
       child: Column(
@@ -126,7 +127,7 @@ class _HomePageState extends State<HomePage> {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
-                image: NetworkImage("https://i.imgur.com/6tKcSqt.jpg"),
+                image: NetworkImage(urlImg),
                 fit: BoxFit.cover,
               ),
             ),
@@ -153,7 +154,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget body(Profile profileInfo) {
+  Widget body(List<Skill> skills) {
     return Container(
       child: Column(
         children: [
@@ -163,12 +164,12 @@ class _HomePageState extends State<HomePage> {
             height: 100,
             child: CarouselList(
               onTap: (index) => setState(() => id = index),
-              items: skillsIcon(profileInfo.skills),
+              items: skillsIcon(skills),
             ),
           ),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 40),
-            child: Text(profileInfo.skills[id].title,
+            child: Text(skills[id].title,
                 style: Theme.of(context)
                     .primaryTextTheme
                     .headline1),
@@ -177,7 +178,7 @@ class _HomePageState extends State<HomePage> {
             alignment: Alignment.centerLeft,
             margin: EdgeInsets.symmetric(
                 horizontal: 40, vertical: 15),
-            child: Text(profileInfo.skills[id].description,
+            child: Text(skills[id].description,
                 style: Theme.of(context)
                     .primaryTextTheme
                     .subtitle1),
