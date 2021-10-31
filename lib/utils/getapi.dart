@@ -4,9 +4,9 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class GetApi {
-  Future<List<Repository>> getRepositories() async {
-    final url = "https://api.github.com/users/underfilho/repos";
-    final response = await http.get(url, headers: {'User-Agent': 'underfilho'});
+  Future<List<Repository>?> getRepositories() async {
+    final uri = Uri.https("api.github.com", "users/underfilho/repos");
+    final response = await http.get(uri, headers: {'User-Agent': 'underfilho'});
     List<Repository> repositories = [];
 
     if (response.statusCode == 200) {
@@ -21,10 +21,9 @@ class GetApi {
     return repositories;
   }
 
-  Future<Profile> getProfile() async {
-    final url =
-        "https://raw.githubusercontent.com/underfilho/mygit/master/me.json";
-    final response = await http.get(url);
+  Future<Profile?> getProfile() async {
+    final uri = Uri.https("raw.githubusercontent.com", "underfilho/mygit/master/me.json");
+    final response = await http.get(uri);
     Profile profile;
 
     if (response.statusCode == 200) {
