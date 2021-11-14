@@ -1,5 +1,5 @@
 {
-  "function": "Desenvolvedor Junior I Backend .NET na Avonale Workspace e estudante de Engenharia de Computação na UFS",
+  "function": "Desenvolvedor Junior I Backend .NET em Avonale Workspace e cursando Engenharia de Computação pela UFS",
   "skills": [
     {
       "title": "Flutter",
@@ -8,22 +8,22 @@
     },
     {
       "title": "C#",
-      "description": "Trabalho como estagiário na Avonale utilizando C# como a linguagem principal através do ASP.NET, foi uma das minhas primeiras linguagens que aprendi, já trabalhei com ela também tanto com Xamarin como com Unity",
+      "description": "Atualmente desenvolvo para a Avonale utilizando C# como a linguagem principal através do ASP.NET, foi uma das minhas primeiras linguagens que aprendi, já trabalhei com ela também tanto com Xamarin como com Unity.",
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/csharp.png"
     },
     {
       "title": "Python",
-      "description": "Uma linguagem muito divertida e simples de se programar, ótima pra iniciantes e ótima para pequenos projetos, atualmente tenho uma biblioteca escrita em Python para desenhos e sistemas físicos disponível no meu Github, além de alguns pequenos projetos.",
+      "description": "Uma linguagem muito simples e meu quebra galho atualmente, tenho uma biblioteca escrita em Python para desenhos e sistemas físicos disponível no meu Github, além de alguns pequenos projetos.",
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/python.png"
     },
     {
       "title": "Kotlin",
-      "description": "Kotlin tem uma sintaxe levemente diferente das linguagens mais utilizadas, mas rapidamente me adaptei também, utilizei no desenvolvimento nativo para Android com o Android Studio. Participei na criação de um aplicativo pessoal chamado ToBuy que atualmente transferi pra Flutter e continuo a trabalhar nele",
+      "description": "Kotlin tem uma sintaxe levemente diferente das linguagens mais utilizadas, mas rapidamente me adaptei também, utilizei no desenvolvimento nativo para Android com o Android Studio. Participei na criação de um aplicativo pessoal chamado ToBuy que atualmente transferi pra Flutter e continuo a trabalhar nele.",
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/kotlin.png"
     },
     {
       "title": "VSCode",
-      "description": "Atualmente o editor de texto que uso pra todas as linguagens anteriores (exceto Unity), tenho um bom conhecimento sobre o programa o que facilita e agiliza muito o desenvolvimento. Também utilizo o Visual Studio e Android Studio como IDE's.",
+      "description": "Atualmente o editor de texto que uso pra todas as linguagens anteriores, tenho um bom conhecimento sobre o programa o que facilita e agiliza muito o desenvolvimento. Também utilizo o Visual Studio e Android Studio como IDE's.",
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/vscode.png"
     }
   ]
