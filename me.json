@@ -1,14 +1,14 @@
 {
-  "function": "Desenvolvedor Junior I Backend .NET em Avonale Workspace e cursando Engenharia de Computação pela UFS",
+  "function": "Desenvolvedor Mobile apaixonado por matemática e física, atualmente cursando Engenharia da Computação pela UFS",
   "skills": [
     {
       "title": "Flutter",
-      "description": "Atualmente o que mais me interesso e meu foco principal, utilizando Flutter consigo fazer várias coisas tanto para Android quanto para iOS.\nParticipação finalizada em um aplicativo voluntário sobre o COVID-19 em parceria com a UFS e atualmente participo na criação de outro app.",
+      "description": "Atualmente o que mais me interesso e meu foco principal.\nJá desenvolvi um app autoral chamado Buyit e também participei no desenvolvimento de dois projetos mobile na universidade.",
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/flutter.png"
     },
     {
       "title": "C#",
-      "description": "Atualmente desenvolvo para a Avonale utilizando C# como a linguagem principal através do ASP.NET, foi uma das minhas primeiras linguagens que aprendi, já trabalhei com ela também tanto com Xamarin como com Unity.",
+      "description": "Passei 6 meses desenvolvendo para a Avonale utilizando C# como a linguagem principal através do ASP.NET. Foi uma das minhas primeiras linguagens que aprendi, também já trabalhei com ela também tanto com Xamarin como com Unity.",
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/csharp.png"
     },
     {
@@ -18,7 +18,7 @@
     },
     {
       "title": "Kotlin",
-      "description": "Kotlin tem uma sintaxe levemente diferente das linguagens mais utilizadas, mas rapidamente me adaptei também, utilizei no desenvolvimento nativo para Android com o Android Studio. Participei na criação de um aplicativo pessoal chamado ToBuy que atualmente transferi pra Flutter e continuo a trabalhar nele.",
+      "description": "Kotlin tem uma sintaxe levemente diferente das linguagens mais utilizadas, mas rapidamente me adaptei também, utilizei no desenvolvimento nativo para Android com o Android Studio. Participei na criação de um aplicativo pessoal que atualmente transferi pra Flutter.",
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/kotlin.png"
     },
     {
