@@ -5,7 +5,6 @@ import 'package:mygit/models/experience.dart';
 import 'package:mygit/pages/repository_page.dart';
 import 'package:mygit/models/skill.dart';
 import 'package:mygit/models/profile.dart';
-import 'package:mygit/utils/const.dart';
 import 'package:mygit/utils/getapi.dart';
 import 'package:mygit/utils/mycolors.dart';
 import 'package:flutter/material.dart';
@@ -189,16 +188,13 @@ class _HomePageState extends State<HomePage> {
           ),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 40),
-            child: Text(skills[id].title,
-                style: Theme.of(context).primaryTextTheme.headline1),
+            child: Text(
+              skills[id].title,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).primaryTextTheme.headline1,
+            ),
           ),
           experiences(skills[id].experiences),
-          /*Container(
-            alignment: Alignment.centerLeft,
-            margin: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-            child: Text(skills[id].description,
-                style: Theme.of(context).primaryTextTheme.subtitle1),
-          ),*/
         ],
       ),
     );

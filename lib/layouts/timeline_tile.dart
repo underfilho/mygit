@@ -15,6 +15,7 @@ class TimelineTile extends StatelessWidget {
         SizedBox(height: 5),
         Text(
           experience.title,
+          textAlign: TextAlign.center,
           style: Theme.of(context).primaryTextTheme.headline2,
         ),
         SizedBox(height: 5),
