@@ -60,12 +60,13 @@ class TimelineTile extends StatelessWidget {
     description.asMap().forEach((i, e) {
       final text = e.split(';');
       final isEven = i % 2 == 0;
+      final tapRecognizer = TapGestureRecognizer()
+        ..onTap = () => launchURL(text[1]);
 
       var textSpan = TextSpan(
         text: text[0],
         style: isEven ? style : linkStyle,
-        recognizer: TapGestureRecognizer()
-          ..onTap = !isEven ? () => launchURL(text[1]) : null,
+        recognizer: !isEven ? tapRecognizer : null,
       );
 
       content.add(textSpan);
