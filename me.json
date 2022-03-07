@@ -22,7 +22,7 @@
         },
         {
           "title": "Artigo sobre Simulações",
-          "description": "Artigo no Medium sobre simulações/animações em flutter, simulando o Pêndulo Simples. \"Simulações com Flutter (ou qualquer ferramenta visual) e o Pêndulo Simples\"",
+          "description": "Artigo no Medium sobre <simulações/animações em flutter;https://medium.com/@underfilho/simula%C3%A7%C3%B5es-com-flutter-ou-qualquer-ferramenta-visual-e-o-p%C3%AAndulo-simples-5ee496548db5>, simulando o Pêndulo Simples.",
           "completed": true
         }
       ],
@@ -33,7 +33,7 @@
       "experiences": [
         {
           "title": "Dev. Backend em Avonale Workspace",
-          "description": "Desenvolvedor na empresa Avonale, utilizando ASP.NET, SQL Server e Javascript fazendo manutenção e melhorias no site FANDI, solução de F&I especializada no mercado automotivo. Jun/2021 - Dez/2021",
+          "description": "Desenvolvedor na empresa <Avonale;https://www.linkedin.com/company/avonaleoficial/>, utilizando ASP.NET, SQL Server e Javascript fazendo manutenção e melhorias no site FANDI, solução de F&I especializada no mercado automotivo. Jun/2021 - Dez/2021",
           "completed": true
         },
         {
@@ -49,7 +49,7 @@
       "experiences": [
         {
           "title": "Biblioteca Workspace",
-          "description": "Criação e manutenção da biblioteca Workspace, onde você pode fazer animações e simulações físicas 2D de maneira fácil e prática.",
+          "description": "Criação e manutenção da biblioteca <Workspace;https://github.com/underfilho/Workspace>, onde você pode fazer animações e simulações físicas 2D de maneira fácil e prática.",
           "completed": true
         }
       ],
@@ -59,8 +59,8 @@
       "title": "Kotlin",
       "experiences": [
         {
-          "title": "Buyit",
-          "description": "Primeira versão do Buyit foi desenvolvido com Android nativo utilizando Kotlin, depois de um tempo atualizando pra Flutter.",
+          "title": "ToBuy",
+          "description": "Primeira versão do Buyit, o ToBuy, foi desenvolvido com Android nativo utilizando Kotlin, depois de um tempo atualizando pra Flutter.",
           "completed": true
         }
       ],
