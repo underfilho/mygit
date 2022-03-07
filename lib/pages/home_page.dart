@@ -99,7 +99,7 @@ class _HomePageState extends State<HomePage> {
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         appBar(),
-        profile(Const.urlImg, profileInfo.function),
+        profile(profileInfo.profilePic, profileInfo.function),
         divider(),
         body(profileInfo.skills),
         SizedBox(height: 100),

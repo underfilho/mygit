@@ -2,11 +2,15 @@ import 'package:mygit/models/skill.dart';
 
 class Profile {
   String function;
+  String profilePic;
   List<Skill> skills = [];
 
-  Profile({required this.function, required this.skills});
+  Profile(
+      {required this.function, required this.skills, required this.profilePic});
 
-  Profile.fromMap(Map<String, dynamic> jsonData) : function = jsonData['function'] {
+  Profile.fromMap(Map<String, dynamic> jsonData)
+      : function = jsonData['function'],
+        profilePic = jsonData['profilePic'] {
     var skillsMap = jsonData['skills'];
     for (var item in skillsMap) skills.add(Skill.fromMap(item));
   }
