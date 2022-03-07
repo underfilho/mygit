@@ -6,14 +6,14 @@
       "title": "Flutter",
       "experiences": [
         {
-          "title": "Buyit",
-          "description": "Desenvolvimento de um aplicativo autoral chamado Buyit, uma lista de compras inteligente, atualmente na Playstore.",
-          "completed": true
-        },
-        {
           "title": "Educ-SE",
           "description": "Criação de um app em parceria com a Fapitec para auxiliar no ensino nas escolas públicas. Ainda em desenvolvimento.",
           "completed": false
+        },
+        {
+          "title": "Buyit",
+          "description": "Desenvolvimento de um aplicativo autoral chamado Buyit, uma lista de compras inteligente, atualmente na Playstore.",
+          "completed": true
         },
         {
           "title": "Descovid-SE",
