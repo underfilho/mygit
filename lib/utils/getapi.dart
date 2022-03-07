@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:mygit/models/profile.dart';
 import 'package:mygit/models/repository.dart';
 import 'dart:convert';
@@ -22,7 +23,8 @@ class GetApi {
   }
 
   Future<Profile?> getProfile() async {
-    final uri = Uri.https("raw.githubusercontent.com", "underfilho/mygit/master/me.json");
+    final uri = Uri.https(
+        "raw.githubusercontent.com", "underfilho/mygit/master/me.json");
     final response = await http.get(uri);
     Profile profile;
 

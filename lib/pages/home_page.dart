@@ -1,5 +1,7 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mygit/layouts/carousel_list.dart';
+import 'package:mygit/layouts/timeline_tile.dart';
+import 'package:mygit/models/experience.dart';
 import 'package:mygit/pages/repository_page.dart';
 import 'package:mygit/models/skill.dart';
 import 'package:mygit/models/profile.dart';
@@ -29,40 +31,63 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: myTheme.background,
+        color: MyColors.background,
         height: double.infinity,
         child: SafeArea(
-          child: LayoutBuilder(
-            builder: (context, constraints) => SingleChildScrollView(
-              child: Center(
-                child: ConstrainedBox(
-                  constraints: constraints.copyWith(
-                    maxWidth: 800,
-                    minHeight: constraints.maxHeight,
-                    maxHeight: double.infinity,
-                  ),
-                  child: FutureBuilder(
-                    future: profileFuture,
-                    builder: (context, snapshot) {
-                      if (snapshot.data == null) {
-                        return Container(
-                          margin: EdgeInsets.only(bottom: 90),
-                          child: Center(
-                            child: CircularProgressIndicator(
-                              valueColor:
-                                  AlwaysStoppedAnimation(myTheme.textColor),
-                            ),
-                          ),
-                        );
-                      }
-                      Profile profileInfo = snapshot.data as Profile;
+          child: Stack(
+            children: [
+              LayoutBuilder(
+                builder: (context, constraints) => SingleChildScrollView(
+                  child: Center(
+                    child: ConstrainedBox(
+                      constraints: constraints.copyWith(
+                        maxWidth: 800,
+                        minHeight: constraints.maxHeight,
+                        maxHeight: double.infinity,
+                      ),
+                      child: FutureBuilder(
+                        future: profileFuture,
+                        builder: (context, snapshot) {
+                          if (snapshot.data == null) {
+                            return Container(
+                              margin: EdgeInsets.only(bottom: 90),
+                              child: Center(
+                                child: CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation(
+                                      MyColors.textColor),
+                                ),
+                              ),
+                            );
+                          }
+                          Profile profileInfo = snapshot.data as Profile;
 
-                      return buildLayout(profileInfo);
-                    },
+                          return buildLayout(profileInfo);
+                        },
+                      ),
+                    ),
                   ),
                 ),
               ),
-            ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      stops: [0.1, 0.8],
+                      colors: [
+                        MyColors.accent,
+                        MyColors.background.withOpacity(0.5),
+                      ],
+                    ),
+                  ),
+                  alignment: Alignment.center,
+                  height: 50,
+                  child: footer(),
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -70,19 +95,15 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget buildLayout(Profile profileInfo) {
-    return IntrinsicHeight(
-      child: Column(
-        mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
-          appBar(),
-          profile(Const.urlImg, profileInfo.function),
-          divider(),
-          body(profileInfo.skills),
-          Container(height: 25),
-          Expanded(child: footer()),
-          Container(height: 35),
-        ],
-      ),
+    return Column(
+      mainAxisSize: MainAxisSize.max,
+      children: <Widget>[
+        appBar(),
+        profile(Const.urlImg, profileInfo.function),
+        divider(),
+        body(profileInfo.skills),
+        SizedBox(height: 100),
+      ],
     );
   }
 
@@ -104,10 +125,10 @@ class _HomePageState extends State<HomePage> {
     return Container(
       alignment: Alignment.bottomRight,
       margin: EdgeInsets.only(right: 20, top: 25),
-      child: FloatingActionButton(
-        backgroundColor: myTheme.accent,
+      child: FloatingActionButton.extended(
+        backgroundColor: MyColors.accent,
         tooltip: "Meus Repositórios",
-        child: Icon(Icons.code, color: myTheme.textColor),
+        label: Icon(Icons.code, color: MyColors.textColor),
         onPressed: () {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => RepositoryPage()));
@@ -159,8 +180,7 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         children: [
           Container(
-            margin: EdgeInsets.symmetric(
-                horizontal: 20, vertical: 10),
+            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             height: 100,
             child: CarouselList(
               onTap: (index) => setState(() => id = index),
@@ -170,46 +190,56 @@ class _HomePageState extends State<HomePage> {
           Container(
             margin: EdgeInsets.symmetric(horizontal: 40),
             child: Text(skills[id].title,
-                style: Theme.of(context)
-                    .primaryTextTheme
-                    .headline1),
+                style: Theme.of(context).primaryTextTheme.headline1),
           ),
-          Container(
+          experiences(skills[id].experiences),
+          /*Container(
             alignment: Alignment.centerLeft,
-            margin: EdgeInsets.symmetric(
-                horizontal: 40, vertical: 15),
+            margin: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
             child: Text(skills[id].description,
-                style: Theme.of(context)
-                    .primaryTextTheme
-                    .subtitle1),
-          ),
+                style: Theme.of(context).primaryTextTheme.subtitle1),
+          ),*/
         ],
       ),
     );
   }
-  
+
+  Widget experiences(List<Experience> experiences) {
+    return Column(
+      children: experiences.map(
+        (e) {
+          return Padding(
+            padding: const EdgeInsets.only(top: 30, left: 40, right: 40),
+            child: TimelineTile(experience: e),
+          );
+        },
+      ).toList(),
+    );
+  }
+
   Widget divider() {
     return Container(
       margin: EdgeInsets.only(top: 30, right: 30, left: 30),
-      color: myTheme.divider,
+      color: MyColors.divider,
       height: 0.5,
     );
   }
 
   Widget footer() {
     return Container(
-      alignment: Alignment.bottomCenter,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           InkWell(
             onTap: () => launchURL('https://github.com/underfilho'),
-            child: FaIcon(FontAwesomeIcons.github, color: Colors.white, size: 24),
+            child:
+                FaIcon(FontAwesomeIcons.github, color: Colors.white, size: 24),
           ),
           SizedBox(width: 10),
           InkWell(
             onTap: () => launchURL('https://linkedin.com/in/underfilho'),
-            child: FaIcon(FontAwesomeIcons.linkedin, color: Colors.white, size: 24),
+            child: FaIcon(FontAwesomeIcons.linkedin,
+                color: Colors.white, size: 24),
           ),
         ],
       ),

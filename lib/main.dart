@@ -15,20 +15,20 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.grey,
         primaryTextTheme: TextTheme(
           headline1: TextStyle(
-              color: myTheme.textColor,
+              color: MyColors.textColor,
               fontSize: 30,
               fontWeight: FontWeight.normal),
           headline2: TextStyle(
-              color: myTheme.textColor,
+              color: MyColors.textColor,
               fontSize: 25,
               fontWeight: FontWeight.normal),
           subtitle1: TextStyle(
-              color: myTheme.textColor,
-              fontSize: 20,
+              color: MyColors.secondaryTextColor,
+              fontSize: 18,
               fontWeight: FontWeight.w100),
           caption: TextStyle(
-              color: myTheme.textColor,
-              fontSize: 20,
+              color: MyColors.textColor,
+              fontSize: 18,
               fontWeight: FontWeight.w300),
         ),
       ),

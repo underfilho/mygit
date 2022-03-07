@@ -23,7 +23,7 @@ class _RepositoryPageState extends State<RepositoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: myTheme.background,
+      backgroundColor: MyColors.background,
       body: SafeArea(
         child: Column(
           children: <Widget>[
@@ -37,7 +37,8 @@ class _RepositoryPageState extends State<RepositoryPage> {
                       margin: EdgeInsets.only(bottom: 90),
                       child: Center(
                         child: CircularProgressIndicator(
-                          valueColor: AlwaysStoppedAnimation(myTheme.textColor),
+                          valueColor:
+                              AlwaysStoppedAnimation(MyColors.textColor),
                         ),
                       ),
                     ),
@@ -74,7 +75,7 @@ class _RepositoryPageState extends State<RepositoryPage> {
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
               child: Icon(Icons.arrow_back_ios,
-                  size: 24, color: myTheme.textColor),
+                  size: 24, color: MyColors.textColor),
             ),
           ),
           Container(width: 10),

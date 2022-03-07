@@ -16,7 +16,7 @@ class RepositoryItem extends StatelessWidget {
       width: double.infinity,
       margin: EdgeInsets.only(right: 25, left: 25, bottom: 20),
       decoration: BoxDecoration(
-        border: Border.all(width: 0.5, color: myTheme.divider),
+        border: Border.all(width: 0.5, color: MyColors.divider),
         borderRadius: BorderRadius.circular(7),
       ),
       child: Container(
@@ -24,7 +24,7 @@ class RepositoryItem extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Row(children: <Widget>[
-              Icon(Icons.book, color: myTheme.textColor, size: 22),
+              Icon(Icons.book, color: MyColors.textColor, size: 22),
               Container(width: 12),
               Text(repository.title,
                   style: Theme.of(context)
@@ -33,8 +33,7 @@ class RepositoryItem extends StatelessWidget {
                       .copyWith(fontSize: 22)),
               Spacer(),
               (url_icon != null)
-                  ? Image.asset(url_icon,
-                      width: 25, height: 25)
+                  ? Image.asset(url_icon, width: 25, height: 25)
                   : Container()
             ]),
             Container(height: 20),
@@ -50,11 +49,11 @@ class RepositoryItem extends StatelessWidget {
             ),
             Container(height: 10),
             Row(children: <Widget>[
-              Icon(Icons.star_border, size: 18, color: myTheme.textColor),
+              Icon(Icons.star_border, size: 18, color: MyColors.textColor),
               Container(width: 5),
               Text(
                 repository.stars.toString(),
-                style: TextStyle(color: myTheme.textColor),
+                style: TextStyle(color: MyColors.textColor),
               )
             ]),
           ],

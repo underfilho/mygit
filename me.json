@@ -3,27 +3,67 @@
   "skills": [
     {
       "title": "Flutter",
-      "description": "Atualmente o que mais me interesso e meu foco principal.\nJá desenvolvi um app autoral chamado Buyit e também participei no desenvolvimento de dois projetos mobile na universidade.",
+      "experiences": [
+        {
+          "title": "Buyit",
+          "description": "Desenvolvimento de um aplicativo autoral chamado Buyit, atualmente na Playstore, que pode ser baixado aqui.\n2019-Hoje",
+          "completed": true
+        },
+        {
+          "title": "Artigo sobre Simulações",
+          "description": "Artigo no Medium sobre simulações/animações em flutter, simulando o Pêndulo Simples.",
+          "completed": true
+        }
+      ],
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/flutter.png"
     },
     {
       "title": "C#",
-      "description": "Passei 6 meses desenvolvendo para a Avonale utilizando C# como a linguagem principal através do ASP.NET. Foi uma das minhas primeiras linguagens que aprendi, também já trabalhei com ela também tanto com Xamarin como com Unity.",
+      "experiences": [
+        {
+          "title": "Dev. Backend em Avonale Workspace",
+          "description": "Desenvolvedor na empresa Avonale, fazendo manutenção e melhorias no site FANDI, utilizando ASP.NET, SQL Server e Javascript.\nJun/2021 - Dez/2021",
+          "completed": true
+        },
+        {
+          "title": "Jogo Propagames",
+          "description": "Criação do jogo Propagames utilizando Unity, como projeto de extensão pela UFS. Um simples jogo de tabuleiro 2D",
+          "completed": true
+        }
+      ],
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/csharp.png"
     },
     {
       "title": "Python",
-      "description": "Uma linguagem muito simples e meu quebra galho atualmente, tenho uma biblioteca escrita em Python para desenhos e sistemas físicos disponível no meu Github, além de alguns pequenos projetos.",
+      "experiences": [
+        {
+          "title": "Biblioteca Workspace",
+          "description": "Criação e manutenção da biblioteca Workspace, onde você pode fazer animações e simulações físicas 2D de maneira fácil e prática.",
+          "completed": true
+        }
+      ],
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/python.png"
     },
     {
       "title": "Kotlin",
-      "description": "Kotlin tem uma sintaxe levemente diferente das linguagens mais utilizadas, mas rapidamente me adaptei também, utilizei no desenvolvimento nativo para Android com o Android Studio. Participei na criação de um aplicativo pessoal que atualmente transferi pra Flutter.",
+      "experiences": [
+        {
+          "title": "Buyit",
+          "description": "Primeira versão do Buyit foi desenvolvido com Kotlin, depois de um tempo atualizando pra Flutter.",
+          "completed": true
+        }
+      ],
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/kotlin.png"
     },
     {
       "title": "VSCode",
-      "description": "Atualmente o editor de texto que uso pra todas as linguagens anteriores, tenho um bom conhecimento sobre o programa o que facilita e agiliza muito o desenvolvimento. Também utilizo o Visual Studio e Android Studio como IDE's.",
+      "experiences": [
+        {
+          "title": "Tudo",
+          "description": "Todos os projetos citados foram desenvolvidos usando o VSCode, exceto o jogo pela Unity.",
+          "completed": true
+        }
+      ],
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/vscode.png"
     }
   ]
