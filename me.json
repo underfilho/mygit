@@ -7,12 +7,22 @@
       "experiences": [
         {
           "title": "Buyit",
-          "description": "Desenvolvimento de um aplicativo autoral chamado Buyit, atualmente na Playstore, que pode ser baixado aqui.",
+          "description": "Desenvolvimento de um aplicativo autoral chamado Buyit, uma lista de compras inteligente, atualmente na Playstore.",
+          "completed": true
+        },
+        {
+          "title": "Educ-SE",
+          "description": "Criação de um app em parceria com a Fapitec para auxiliar no ensino nas escolas públicas. Ainda em desenvolvimento.",
+          "completed": false
+        },
+        {
+          "title": "Descovid-SE",
+          "description": "Participei na criação do app para auxiliar na disseminação de informações e dicas sobre o Covid-19, como projeto de extensão pela UFS.",
           "completed": true
         },
         {
           "title": "Artigo sobre Simulações",
-          "description": "Artigo no Medium sobre simulações/animações em flutter, simulando o Pêndulo Simples.",
+          "description": "Artigo no Medium sobre simulações/animações em flutter, simulando o Pêndulo Simples. \"Simulações com Flutter (ou qualquer ferramenta visual) e o Pêndulo Simples\"",
           "completed": true
         }
       ],
@@ -23,7 +33,7 @@
       "experiences": [
         {
           "title": "Dev. Backend em Avonale Workspace",
-          "description": "Desenvolvedor na empresa Avonale, fazendo manutenção e melhorias no site FANDI, utilizando ASP.NET, SQL Server e Javascript. Jun/2021 - Dez/2021",
+          "description": "Desenvolvedor na empresa Avonale, utilizando ASP.NET, SQL Server e Javascript fazendo manutenção e melhorias no site FANDI, solução de F&I especializada no mercado automotivo. Jun/2021 - Dez/2021",
           "completed": true
         },
         {
@@ -50,7 +60,7 @@
       "experiences": [
         {
           "title": "Buyit",
-          "description": "Primeira versão do Buyit foi desenvolvido com Kotlin, depois de um tempo atualizando pra Flutter.",
+          "description": "Primeira versão do Buyit foi desenvolvido com Android nativo utilizando Kotlin, depois de um tempo atualizando pra Flutter.",
           "completed": true
         }
       ],
@@ -60,8 +70,8 @@
       "title": "VSCode",
       "experiences": [
         {
-          "title": "Tudo",
-          "description": "Todos os projetos citados foram desenvolvidos usando o VSCode, exceto o jogo pela Unity.",
+          "title": "Diversos",
+          "description": "Maioria dos meus projetos são desenvolvidos utilizando o VSCode como ferramenta principal, dos projetos citados apenas o Propagames (Unity) e o app em Kotlin (Android Studio) não foram feitos no VSCode.",
           "completed": true
         }
       ],
