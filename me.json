@@ -12,7 +12,7 @@
         },
         {
           "title": "Buyit",
-          "description": "Desenvolvimento de um aplicativo autoral chamado Buyit, uma lista de compras inteligente, esperando a ser aceito na Playstore.",
+          "description": "Desenvolvimento de um aplicativo autoral chamado <Buyit;https://play.google.com/store/apps/details?id=dev.ander.buyit>, uma lista de compras inteligente que auxilia na organização e a acompanhar o progresso.",
           "completed": true
         },
         {
@@ -21,8 +21,8 @@
           "completed": true
         },
         {
-          "title": "Artigo sobre Simulações",
-          "description": "Artigo no Medium sobre <simulações/animações em flutter;https://medium.com/@underfilho/simula%C3%A7%C3%B5es-com-flutter-ou-qualquer-ferramenta-visual-e-o-p%C3%AAndulo-simples-5ee496548db5>, simulando o Pêndulo Simples.",
+          "title": "Simulação do Pêndulo Simples",
+          "description": "Simulação de diversos pêndulos em Flutter, código disponível <aqui;https://github.com/underfilho/pendulum>. Também criei um <artigo no Medium;https://medium.com/@underfilho/simula%C3%A7%C3%B5es-com-flutter-ou-qualquer-ferramenta-visual-e-o-p%C3%AAndulo-simples-5ee496548db5> explicando todo o processo de construção da simulação.",
           "completed": true
         }
       ],
