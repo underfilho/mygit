@@ -7,7 +7,7 @@
       "experiences": [
         {
           "title": "Game People",
-          "description": "Atualmente trabalhando na empresa <Game People;https://www.linkedin.com/company/gamepeopleoficial/>, liderando o desenvolvimento Flutter, implementando e sugerindo melhorias, além de manter a arquitetura do projeto utilizando Mobx e Modular. Utilizando no desenvolvimento Hasura/GraphQL, Firebase e conexões com REST API. 11/03/2022-Atualmente.",
+          "description": "Atualmente trabalhando na empresa <Game People;https://www.linkedin.com/company/gamepeopleoficial/>, liderando o desenvolvimento Flutter, implementando e sugerindo melhorias, além de manter a arquitetura do projeto utilizando Mobx e Modular. Utilizando no desenvolvimento Hasura/GraphQL, Firebase e conexões com REST API.\n11/03/2022 - Atualmente.",
           "completed": false
         },
         {
@@ -38,7 +38,7 @@
       "experiences": [
         {
           "title": "Dev. Backend em Avonale Workspace",
-          "description": "Desenvolvedor na empresa <Avonale;https://www.linkedin.com/company/avonaleoficial/>, utilizando ASP.NET, SQL Server e Javascript fazendo manutenção e melhorias no site FANDI, solução de F&I especializada no mercado automotivo. Jun/2021 - Dez/2021",
+          "description": "Desenvolvedor na empresa <Avonale;https://www.linkedin.com/company/avonaleoficial/>, utilizando ASP.NET, SQL Server e Javascript fazendo manutenção e melhorias no site FANDI, solução de F&I especializada no mercado automotivo.\nJun/2021 - Dez/2021",
           "completed": true
         },
         {
