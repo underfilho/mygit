@@ -6,6 +6,11 @@
       "title": "Flutter",
       "experiences": [
         {
+          "title": "GamePeople",
+          "description": "Atualmente trabalhando na empresa GamePeople, liderando o desenvolvimento Flutter, implementando e sugerindo melhorias, além de manter a arquitetura do projeto utilizando Mobx e Modular. Utilizando no desenvolvimento Hasura/GraphQL, Firebase e conexões com REST API. 11/03/2022-Atualmente.",
+          "completed": false
+        },
+        {
           "title": "Educ-SE",
           "description": "Criação de um app em parceria com a Fapitec para auxiliar no ensino nas escolas públicas. Ainda em desenvolvimento.",
           "completed": false
