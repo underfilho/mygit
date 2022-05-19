@@ -8,27 +8,27 @@
         {
           "title": "Game People",
           "description": "Atualmente trabalhando na empresa <Game People;https://www.linkedin.com/company/gamepeopleoficial/>, liderando o desenvolvimento Flutter, implementando e sugerindo melhorias, além de manter a arquitetura do projeto utilizando Mobx e Modular. Utilizando também Hasura/GraphQL, Firebase e CodeMagic.\nMar/2022 - Atualmente.",
-          "completed": false
+          "projectType": 0
         },
         {
           "title": "Educ-SE",
           "description": "Criação de um app em parceria com a Fapitec para auxiliar no ensino nas escolas públicas. Ainda em desenvolvimento.",
-          "completed": false
+          "projectType": 1
         },
         {
           "title": "Buyit",
           "description": "Desenvolvimento de um aplicativo autoral chamado <Buyit;https://play.google.com/store/apps/details?id=dev.ander.buyit>, uma lista de compras inteligente que auxilia na organização e a acompanhar o progresso dos itens.",
-          "completed": true
+          "projectType": 2
         },
         {
           "title": "Descovid-SE",
           "description": "Participei na criação do app para auxiliar na disseminação de informações e dicas sobre o Covid-19, como projeto de extensão pela UFS.",
-          "completed": true
+          "projectType": 1
         },
         {
           "title": "Simulação do Pêndulo Simples",
           "description": "Simulação de diversos pêndulos em Flutter, código disponível <aqui;https://github.com/underfilho/pendulum>. Também criei um <artigo no Medium;https://medium.com/@underfilho/simula%C3%A7%C3%B5es-com-flutter-ou-qualquer-ferramenta-visual-e-o-p%C3%AAndulo-simples-5ee496548db5> explicando todo o processo de construção da simulação.",
-          "completed": true
+          "projectType": 2
         }
       ],
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/flutter.png"
@@ -39,12 +39,12 @@
         {
           "title": "Dev. Backend em Avonale Workspace",
           "description": "Desenvolvedor na empresa <Avonale;https://www.linkedin.com/company/avonaleoficial/>, utilizando ASP.NET, SQL Server e Javascript fazendo manutenção e melhorias no site FANDI, solução de F&I especializada no mercado automotivo.\nJun/2021 - Dez/2021",
-          "completed": true
+          "projectType": 0
         },
         {
           "title": "Jogo Propagames",
           "description": "Criação do jogo Propagames utilizando Unity, como projeto de extensão pela UFS. Um simples jogo de tabuleiro 2D",
-          "completed": true
+          "projectType": 1
         }
       ],
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/csharp.png"
@@ -55,7 +55,7 @@
         {
           "title": "Biblioteca Workspace",
           "description": "Criação e manutenção da biblioteca <Workspace;https://github.com/underfilho/Workspace>, onde você pode fazer animações e simulações físicas 2D de maneira fácil e prática.",
-          "completed": true
+          "projectType": 2
         }
       ],
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/python.png"
@@ -66,7 +66,7 @@
         {
           "title": "ToBuy",
           "description": "Primeira versão do Buyit, o ToBuy, foi desenvolvido com Android nativo utilizando Kotlin, depois de um tempo atualizando pra Flutter.",
-          "completed": true
+          "projectType": 2
         }
       ],
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/kotlin.png"
@@ -77,7 +77,7 @@
         {
           "title": "Diversos",
           "description": "Maioria dos meus projetos são desenvolvidos utilizando o VSCode como ferramenta principal, dos projetos citados apenas o Propagames (Unity) e o app em Kotlin (Android Studio) não foram feitos no VSCode.",
-          "completed": true
+          "projectType": 2
         }
       ],
       "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/vscode.png"
