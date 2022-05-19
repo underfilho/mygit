@@ -13,8 +13,8 @@ class TimelineTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        buildMarker(experience.completed),
-        SizedBox(height: 5),
+        buildMarker(experience.icon, experience.typeString),
+        SizedBox(height: 10),
         Text(
           experience.title,
           textAlign: TextAlign.center,
@@ -33,20 +33,14 @@ class TimelineTile extends StatelessWidget {
     );
   }
 
-  Container buildMarker(bool completed) {
-    return Container(
-      width: 15,
-      height: 15,
-      padding: EdgeInsets.all(3),
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(color: MyColors.textColor, width: 1),
-      ),
+  Widget buildMarker(IconData icon, String tooltip) {
+    return Tooltip(
+      message: tooltip,
       child: Container(
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: completed ? MyColors.textColor : null,
-        ),
+        width: 15,
+        height: 15,
+        padding: EdgeInsets.all(3),
+        child: Icon(icon, color: MyColors.textColor, size: 18),
       ),
     );
   }
