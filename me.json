@@ -11,14 +11,14 @@
           "projectType": 0
         },
         {
-          "title": "Educ-SE",
-          "description": "Criação de um app em parceria com a Fapitec para auxiliar no ensino nas escolas públicas. Ainda em desenvolvimento.",
-          "projectType": 1
-        },
-        {
           "title": "Buyit",
           "description": "Desenvolvimento de um aplicativo autoral chamado <Buyit;https://play.google.com/store/apps/details?id=dev.ander.buyit>, uma lista de compras inteligente que auxilia na organização e a acompanhar o progresso dos itens.",
           "projectType": 2
+        },
+        {
+          "title": "Educ-SE",
+          "description": "Criação de um app em parceria com a Fapitec para auxiliar no ensino nas escolas públicas. Ainda em desenvolvimento.",
+          "projectType": 1
         },
         {
           "title": "Descovid-SE",
