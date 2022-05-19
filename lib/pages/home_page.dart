@@ -215,8 +215,17 @@ class _HomePageState extends State<HomePage> {
 
   Widget divider() {
     return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            MyColors.divider.withOpacity(0.01),
+            MyColors.divider,
+            MyColors.divider.withOpacity(0.01)
+          ],
+          stops: [0.01, 0.5, 0.99],
+        ),
+      ),
       margin: EdgeInsets.only(top: 30, right: 30, left: 30),
-      color: MyColors.divider,
       height: 0.5,
     );
   }
