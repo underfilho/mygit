@@ -37,8 +37,6 @@ class TimelineTile extends StatelessWidget {
     return Tooltip(
       message: tooltip,
       child: Container(
-        width: 15,
-        height: 15,
         padding: EdgeInsets.all(3),
         child: Icon(icon, color: MyColors.textColor, size: 18),
       ),
