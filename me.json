@@ -6,6 +6,11 @@
       "title": "Flutter",
       "experiences": [
         {
+          "title": "CRP Tecnologia",
+          "description": "Desenvolvedor Flutter Senior I, atuando na Fábrica de aplicativos, criando e mantendo aplicativos à demanda de clientes.\Out/2022 - Atualmente.",
+          "projectType": 0
+        }
+        {
           "title": "Game People",
           "description": "Atualmente trabalhando na empresa <Game People;https://www.linkedin.com/company/gamepeopleoficial/>, liderando o desenvolvimento Flutter, implementando e sugerindo melhorias, administrando a publicação nas lojas, além de manter a arquitetura do projeto utilizando Mobx e Modular. Utilizando também Hasura/GraphQL, Firebase e CodeMagic.\nMar/2022 - Atualmente.",
           "projectType": 0
