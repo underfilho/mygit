@@ -124,11 +124,17 @@ class _HomePageState extends State<HomePage> {
       margin: EdgeInsets.only(right: 20, top: 25),
       child: FloatingActionButton.extended(
         backgroundColor: MyColors.accent,
-        tooltip: "Meus Repositórios",
+        tooltip: widget.language == Language.pt_BR
+            ? 'Meus Repositórios'
+            : 'My Repositories',
         label: Icon(Icons.code, color: MyColors.textColor),
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => RepositoryPage()));
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => RepositoryPage(language: widget.language),
+            ),
+          );
         },
       ),
     );

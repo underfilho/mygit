@@ -1,4 +1,5 @@
 import 'package:mygit/layouts/repository_item.dart';
+import 'package:mygit/utils/enums.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:mygit/models/repository.dart';
 import 'package:mygit/utils/getapi.dart';
@@ -6,20 +7,16 @@ import 'package:mygit/utils/mycolors.dart';
 import 'package:flutter/material.dart';
 
 class RepositoryPage extends StatefulWidget {
+  final Language language;
+
+  const RepositoryPage({Key? key, required this.language}) : super(key: key);
+
   @override
   _RepositoryPageState createState() => _RepositoryPageState();
 }
 
 class _RepositoryPageState extends State<RepositoryPage> {
   final GetApi getapi = GetApi();
-  late final repositories;
-
-  @override
-  void initState() {
-    super.initState();
-    repositories = getapi.getRepositories();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,8 +25,8 @@ class _RepositoryPageState extends State<RepositoryPage> {
         child: Column(
           children: <Widget>[
             appBar(context),
-            FutureBuilder(
-              future: repositories,
+            FutureBuilder<List<Repository>?>(
+              future: getapi.getRepositories(),
               builder: (context, snapshot) {
                 if (snapshot.data == null) {
                   return Expanded(
@@ -44,7 +41,7 @@ class _RepositoryPageState extends State<RepositoryPage> {
                     ),
                   );
                 }
-                List<Repository> items = snapshot.data as List<Repository>;
+                List<Repository> items = snapshot.data!;
 
                 return Expanded(
                   child: ListView.builder(
@@ -79,7 +76,10 @@ class _RepositoryPageState extends State<RepositoryPage> {
             ),
           ),
           Container(width: 10),
-          Text("Repositórios",
+          Text(
+              widget.language == Language.pt_BR
+                  ? 'Repositórios'
+                  : 'Repositories',
               style: Theme.of(context).primaryTextTheme.headline1),
         ],
       ),
