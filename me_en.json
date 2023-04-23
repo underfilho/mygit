@@ -1,0 +1,92 @@
+{
+    "function": "Mobile developer passionate about mathematics and physics, currently studying Applied and Computational Mathematics at UFS",
+    "profile_pic": "https://i.imgur.com/RPos6CQ.jpeg",
+    "skills": [
+      {
+        "title": "Flutter",
+        "experiences": [
+          {
+            "title": "CRP Tecnologia",
+            "description": "Flutter Developer, working at the Mobile App Factory, creating and maintaining applications for customer demand.\nOct/2022 - Currently",
+            "projectType": 0
+          },
+          {
+            "title": "Game People",
+            "description": "Head Mobile at <Game People;https://www.linkedin.com/company/gamepeopleoficial/>, leading Flutter development, implementing and suggesting improvements, managing the publication in AppleStore and GooglePlay, in addition to maintain/create the project's architecture with technologies such as Mobx, Modular and BLoC. Also using Hasura/GraphQL, Firebase and CodeMagic.\nMar/2022 - Currently",
+            "projectType": 0
+          },
+          {
+            "title": "Buyit",
+            "description": "Development of an authorial application called <Buyit;https://play.google.com/store/apps/details?id=dev.ander.buyit>, a smart wish list that helps organize and track the progress of items.",
+            "projectType": 2
+          },
+          {
+            "title": "Educ-SE",
+            "description": "Creation of an app in partnership with Fapitec to assist in teaching in public schools. Still under development.",
+            "projectType": 1
+          },
+          {
+            "title": "Descovid-SE",
+            "description": "Participation in the creation of the app to help disseminate information and tips about Covid-19, as an extension project by UFS.",
+            "projectType": 1
+          },
+          {
+            "title": "Simple Pendulum Simulation",
+            "description": "Simulation of several pendulums in Flutter, code available <here;https://github.com/underfilho/pendulum>. I also created an <article on Medium;https://medium.com/@underfilho/simula%C3%A7%C3%B5es-com-flutter-ou-qualquer-ferramenta-visual-e-o-p%C3%AAndulo-simples-5ee496548db5 > explaining the entire process of building the simulation.",
+            "projectType": 2
+          }
+        ],
+        "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/flutter.png"
+      },
+      {
+        "title": "C#",
+        "experiences": [
+          {
+            "title": "Backend Developer at Avonale Workspace",
+            "description": "Developer at <Avonale;https://www.linkedin.com/company/avonaleoficial/>, using ASP.NET, SQL Server and Javascript doing maintenance and improvements on the FANDI website, F&I solution specialized in the automotive market.\nJun/2021 - Dec/2021",
+            "projectType": 0
+          },
+          {
+            "title": "Propagames",
+            "description": "Creation of the game Propagames using Unity, as an extension project by UFS. A simple 2D board game.",
+            "projectType": 1
+          }
+        ],
+        "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/csharp.png"
+      },
+      {
+        "title": "Python",
+        "experiences": [
+          {
+            "title": "Library Workspace",
+            "description": "Creation and maintenance of the <Workspace;https://github.com/underfilho/Workspace> library, where you can make animations and 2D physical simulations in an easy and practical way.",
+            "projectType": 2
+          }
+        ],
+        "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/python.png"
+      },
+      {
+        "title": "Kotlin",
+        "experiences": [
+          {
+            "title": "ToBuy",
+            "description": "First version of Buyit, ToBuy, was developed with native Android using Kotlin, after a while updated to Flutter.",
+            "projectType": 2
+          }
+        ],
+        "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/kotlin.png"
+      },
+      {
+        "title": "VSCode",
+        "experiences": [
+          {
+            "title": "Projects",
+            "description": "Most of my projects were developed using VSCode as the main tool, of the projects mentioned only Propagames (Unity) and the app in Kotlin (Android Studio) were not made in VSCode.",
+            "projectType": 2
+          }
+        ],
+        "url_icon": "https://raw.githubusercontent.com/underfilho/mygit/master/assets/skills/vscode.png"
+      }
+    ]
+  }
+  

@@ -5,12 +5,17 @@ import 'package:mygit/models/experience.dart';
 import 'package:mygit/pages/repository_page.dart';
 import 'package:mygit/models/skill.dart';
 import 'package:mygit/models/profile.dart';
+import 'package:mygit/utils/enums.dart';
 import 'package:mygit/utils/getapi.dart';
 import 'package:mygit/utils/mycolors.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
+  final Language language;
+
+  const HomePage({Key? key, required this.language}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -18,13 +23,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final GetApi getApi = GetApi();
   int id = 0;
-  late final profileFuture;
-
-  @override
-  void initState() {
-    super.initState();
-    profileFuture = getApi.getProfile();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +43,7 @@ class _HomePageState extends State<HomePage> {
                         maxHeight: double.infinity,
                       ),
                       child: FutureBuilder(
-                        future: profileFuture,
+                        future: getApi.getProfile(widget.language),
                         builder: (context, snapshot) {
                           if (snapshot.data == null) {
                             return Container(
