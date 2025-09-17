@@ -6,6 +6,16 @@
         "title": "Flutter",
         "experiences": [
           {
+            "title": "Neodent",
+            "description": "Developer at Neodent, application for dentists and customers of the dental implant brand. Working with the Flutter mobile team on development and architecture maintenance, following the created design system, creating packages and required features. Using a custom state management solution.\nMay/2025 - Present",
+            "projectType": 0
+          },
+          {
+            "title": "QrPerk",
+            "description": "Creation of the QrPerk app as a Freelancer for a client in Australia. From MVP and Figma prototyping to building the client and business versions (Mobile and Web - Flutter).\nDec/2024 - Aug/2025",
+            "projectType": 0
+          },
+          {
             "title": "Game People",
             "description": "Head Mobile at <Game People;https://www.linkedin.com/company/gamepeopleoficial/>, leading Flutter development, implementing and suggesting improvements, managing the publication in AppleStore and GooglePlay, in addition to maintain/create the project's architecture with technologies such as Mobx, Modular and BLoC. Also using Hasura/GraphQL, Firebase and CodeMagic.\nMar/2022 - Sep/2024",
             "projectType": 0
@@ -29,6 +39,11 @@
             "title": "Descovid-SE",
             "description": "Participation in the creation of the app to help disseminate information and tips about Covid-19, as an extension project by UFS.",
             "projectType": 1
+          },
+          {
+            "title": "Flutter and Recaptcha - Article",
+            "description": "Article exemplifying the use of Recaptcha in Flutter due to the low amount of content on the subject. It can be read <here;https://medium.com/@underfilho/flutter-e-recaptcha-v2-06682951215a>.",
+            "projectType": 2
           },
           {
             "title": "Simple Pendulum Simulation",
@@ -68,6 +83,11 @@
       {
         "title": "Kotlin",
         "experiences": [
+          {
+            "title": "Freelancer",
+            "description": "Maintenance project of an app with native Kotlin features, involving features such as Firebase, BackgroundWorkers and Notifications.",
+            "projectType": 0
+          },
           {
             "title": "ToBuy",
             "description": "First version of Buyit, ToBuy, was developed with native Android using Kotlin, after a while updated to Flutter.",
