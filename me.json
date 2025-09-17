@@ -6,13 +6,23 @@
       "title": "Flutter",
       "experiences": [
         {
+          "title": "Neodent",
+          "description": "Desenvolvedor em Neodent, aplicativo para dentistas e clientes da marca de implantes dentários. Atuando junto com o time Flutter mobile no desenvolvimento e manutenção da arquitetura, seguindo o design system criado, com criação de packages e funcionalidades necessárias. Utilizando solução própria para gerenciamento de estados.\nMai/2025 - Atualmente",
+          "projectType": 0
+        },
+        {
+          "title": "Neodent",
+          "description": "Criação do app QrPerk como Freelancer para um cliente da Austrália. Criação desde MVP e prototipação com Figma, até construção da versão cliente e business (Mobile e Web - Flutter).\nDez/2024 - Ago/2025",
+          "projectType": 0
+        },
+        {
           "title": "CRP Tecnologia",
-          "description": "Desenvolvedor Flutter Senior I, atuando na Fábrica de aplicativos, criando e mantendo aplicativos à demanda de clientes.\nOut/2022 - Atualmente",
+          "description": "Desenvolvedor Flutter Senior I, atuando na Fábrica de aplicativos, criando e mantendo aplicativos à demanda de clientes.\nOut/2022 - Jan/2024",
           "projectType": 0
         },
         {
           "title": "Game People",
-          "description": "Liderando o desenvolvimento Flutter do app <Game People;https://play.google.com/store/apps/details?id=br.com.crptecnologia.gamepeople>, implementando e sugerindo melhorias, administrando a publicação nas lojas, além de manter/criar a arquitetura do projeto com tecnologias como Mobx, Modular e BLoC. Utilizando também Hasura/GraphQL, Firebase e CodeMagic.\nMar/2022 - Atualmente",
+          "description": "Liderando o desenvolvimento Flutter do app <Game People;https://play.google.com/store/apps/details?id=br.com.crptecnologia.gamepeople>, implementando e sugerindo melhorias, administrando a publicação nas lojas, além de manter/criar a arquitetura do projeto com tecnologias como Mobx, Modular e BLoC. Utilizando também Hasura/GraphQL, Firebase e CodeMagic.\nJan/2022 - Set/2024",
           "projectType": 0
         },
         {
@@ -21,14 +31,14 @@
           "projectType": 2
         },
         {
-          "title": "Educ-SE",
-          "description": "Criação de um app em parceria com a Fapitec para auxiliar no ensino nas escolas públicas. Ainda em desenvolvimento.",
+          "title": "Educ-SE e Descovid-SE",
+          "description": "Participei na criação dos apps, um em parceria com a Fapitec para auxiliar no ensino nas escolas públicas, outro como projeto de extensão pela UFS para disseminação de informações e dicas sobre o Covid-19.",
           "projectType": 1
         },
         {
-          "title": "Descovid-SE",
-          "description": "Participei na criação do app para auxiliar na disseminação de informações e dicas sobre o Covid-19, como projeto de extensão pela UFS.",
-          "projectType": 1
+          "title": "Flutter e Recaptcha - Artigo",
+          "description": "Artigo exemplificando a utilização do Recaptcha no Flutter pela baixa quantidade de conteúdo a respeito. Pode ser lido <aqui;https://medium.com/@underfilho/flutter-e-recaptcha-v2-06682951215a>.",
+          "projectType": 2
         },
         {
           "title": "Simulação do Pêndulo Simples",
@@ -68,6 +78,11 @@
     {
       "title": "Kotlin",
       "experiences": [
+        {
+          "title": "Freelancer",
+          "description": "Projeto em manutenção de app com funcionalidades nativas em Kotlin, envolvendo funcionalidades como Firebase, BackgroundWorkers e Notificações.",
+          "projectType": 0
+        },
         {
           "title": "ToBuy",
           "description": "Primeira versão do Buyit, o ToBuy, foi desenvolvido com Android nativo utilizando Kotlin, depois de um tempo atualizando pra Flutter.",
